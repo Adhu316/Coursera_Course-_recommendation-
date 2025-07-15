@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Course Recommender Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎓 AI Course Learning Advisor</h1>
+        <form method="POST">
+            <label for="user_input">Describe your goal or background:</label>
+            <textarea name="user_input" required
+                placeholder="e.g. I'm a beginner and want to become a data scientist..."></textarea>
+            <button type="submit">Recommend Learning Path</button>
+        </form>
+
+        {% if response %}
+        <div class="response-box">
+            {{ response|safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
